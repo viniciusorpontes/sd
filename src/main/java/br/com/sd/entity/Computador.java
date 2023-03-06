@@ -3,6 +3,7 @@ package br.com.sd.entity;
 import lombok.*;
 import org.hibernate.Hibernate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -19,7 +20,9 @@ public class Computador {
 
     @Id
     private Integer id;
+    @Column(nullable = false, length = 40)
     private String nome;
+    @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal preco;
 
     @Override
